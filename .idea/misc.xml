@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ASMIdeaPluginConfiguration">
+    <asm skipDebug="false" skipFrames="false" skipCode="false" expandFrames="false" />
+    <groovy codeStyle="LEGACY" />
+  </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Project/gitHubPro/TestViewModule/TestViewModule/app/src/main/res/drawable/ic_launcher_background.xml" value="0.16203703703703703" />
+        <entry key="..\:/Project/gitHubPro/TestViewModule/TestViewModule/app/src/main/res/layout/activity_main.xml" value="0.3808876811594203" />
+        <entry key="..\:/Project/gitHubPro/TestViewModule/TestViewModule/app/src/main/res/layout/activity_test_recycler.xml" value="0.5362563237774031" />
+        <entry key="..\:/Project/gitHubPro/TestViewModule/TestViewModule/app/src/main/res/layout/bottom_item.xml" value="0.234375" />
+        <entry key="..\:/Project/gitHubPro/TestViewModule/TestViewModule/app/src/main/res/layout/header_item.xml" value="0.234375" />
+        <entry key="..\:/Project/gitHubPro/TestViewModule/TestViewModule/app/src/main/res/layout/itemview.xml" value="0.11388888888888889" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
