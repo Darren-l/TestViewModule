@@ -16,7 +16,7 @@ import cn.gd.snm.testviewmodule.R
  * 测试最简易的adapter
  *
  */
-open class TestAdapter(var mcontext: Context, var datas: List<String>) :
+open class TestAdapter(var mcontext: Context, var datas: MutableList<String>) :
     RecyclerView.Adapter<TestAdapter.TestViewHolder>() {
 
     companion object{
@@ -37,11 +37,27 @@ open class TestAdapter(var mcontext: Context, var datas: List<String>) :
         holder.itemView.setOnClickListener{
             Toast.makeText(mcontext,"点击了第${datas[holder.adapterPosition]}个",Toast.LENGTH_SHORT)
                 .show()
+            //测试刷新
+            testNotify()
         }
 
         return holder
     }
 
+    /**
+     * 测试数据刷新。
+     */
+    private fun testNotify() {
+        datas[2] = "###更改数据了###"
+        //todo 全部刷新
+//        notifyDataSetChanged()
+
+        //todo 指定刷新位置2的数据
+        notifyItemChanged(2)
+    }
+
+    //todo 假设这是外部传进来的数据
+//    private var dataBean = ArrayList<ItemBean>()
     /**
      * 绑定数据
      */
@@ -50,6 +66,13 @@ open class TestAdapter(var mcontext: Context, var datas: List<String>) :
 
         holder.img.setImageDrawable(mcontext.resources.getDrawable(R.drawable.img))
         holder.tx.text = "标题 -- ${datas[holder.adapterPosition]}"
+
+        //todo: 设置高亮
+//        if(dataBean[position].isLight){
+//            holder.light.visibility = View.VISIBLE
+//        }else{
+//            holder.light.visibility = View.INVISIBLE
+//        }
     }
 
     /**
@@ -74,6 +97,7 @@ open class TestAdapter(var mcontext: Context, var datas: List<String>) :
     class TestViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var img: ImageView = itemView.findViewById(R.id.img)
         var tx: TextView = itemView.findViewById(R.id.tv)
+        var light:View = itemView.findViewById(R.id.light)
 
     }
 }

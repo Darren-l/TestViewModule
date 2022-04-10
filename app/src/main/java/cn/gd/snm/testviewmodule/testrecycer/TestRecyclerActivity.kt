@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import cn.gd.snm.testviewmodule.R
 import kotlinx.android.synthetic.main.activity_test_recycler.*
 
@@ -18,12 +19,13 @@ class TestRecyclerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_test_recycler)
 
         //todo 初测试基础recycler
-//        testCommentRecyclerView()
+        testCommentRecyclerView()
 
         //todo 测试自定义头部、尾部recyclerview
-        testAttachHeaderRecyclerView()
+//        testAttachHeaderRecyclerView()
 
-        testOptimization()
+        //todo 性能优化相关设置
+//        testOptimization()
 
     }
 
@@ -37,6 +39,13 @@ class TestRecyclerActivity : AppCompatActivity() {
         //todo 当前recyclerview内部若存在其他recyclerview，则设置内部
         // 的recyclerview首次加载个数。
         linearLayoutManager.initialPrefetchItemCount = 10
+
+        //todo 多个recyclerview可共用一个缓存池
+        var recyclerPool = RecyclerView.RecycledViewPool()
+        recy_view.setRecycledViewPool(recyclerPool)
+
+        //todo 设置cache缓冲区list的大小，源码中默认是2。
+        recy_view.setItemViewCacheSize(100)
 
     }
 
@@ -59,6 +68,10 @@ class TestRecyclerActivity : AppCompatActivity() {
             LinearLayoutManager.VERTICAL, false)
 
         recy_view.addItemDecoration(TestDecoration())
+
+        //todo: 若recyclerview大小没有发生变化，则不会调用重绘。
+        // 可以优化仅数据变化的场景下，recyclerview的加载性能。
+        recy_view.setHasFixedSize(true)
 
         recy_view.adapter = adapter
     }

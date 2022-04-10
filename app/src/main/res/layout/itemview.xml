@@ -32,4 +32,12 @@
         android:textSize="17dp"
         />
 
+    <View
+        android:id="@+id/light"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
