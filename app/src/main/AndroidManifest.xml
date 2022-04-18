@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestViewModule">
         <activity
+            android:name=".testfocus.FixFocusActivity"
+            android:exported="false" />
+        <activity
             android:name=".testrecycer.TestRecyclerActivity"
             android:exported="false" />
         <activity

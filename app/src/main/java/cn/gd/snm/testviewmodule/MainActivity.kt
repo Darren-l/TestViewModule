@@ -3,6 +3,7 @@ package cn.gd.snm.testviewmodule
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import cn.gd.snm.testviewmodule.testfocus.FixFocusActivity
 import cn.gd.snm.testviewmodule.testrecycer.TestRecyclerActivity
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun test1() {
-        startActivity(Intent(this,TestRecyclerActivity::class.java))
+//        startActivity(Intent(this,TestRecyclerActivity::class.java))
 
+        startActivity(Intent(this,FixFocusActivity::class.java))
     }
 }
